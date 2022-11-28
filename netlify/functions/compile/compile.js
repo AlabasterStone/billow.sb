@@ -1,4 +1,4 @@
-const core = require('../../../billow/core')
+const core = require('../../../billow/core');
 
 exports.handler = async function (event, context) {
     return {

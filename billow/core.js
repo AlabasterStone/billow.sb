@@ -17,5 +17,5 @@ for (var target in jsonObject.targets)
 */
 function hello(string)
 {
-    return `hello ${string}!`
+    return `hello ${string}!`;
 }
