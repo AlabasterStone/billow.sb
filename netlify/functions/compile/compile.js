@@ -1,9 +1,9 @@
-const core = require('../../../billow/core');
+const corehello = require('../../../billow/core');
 
 exports.handler = async function (event, context) {
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: core.hello("Billow") }),
+      body: JSON.stringify({ message: corehello }),
     };
   };
   
