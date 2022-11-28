@@ -12,6 +12,9 @@
   "keywords": [
     "scratch"
   ],
-  "author": "zhangsn",
-  "license": "MIT"
+  "author": "AlabasterStone",
+  "license": "MIT",
+  "dependencies": {
+    "netlify-cli": "^12.2.7"
+  }
 }
