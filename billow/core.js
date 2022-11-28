@@ -1,3 +1,4 @@
+/*
 const fs = require('fs')
 
 const SC_PROJ_FILE_PATH = "../test/testproject/project.json";
@@ -12,4 +13,9 @@ for (var target in jsonObject.targets)
     {
         fs.writeFileSync(`../test/testproject/dist/${target.name}.js`, "", "utf8");
     }
+}
+*/
+function hello(string)
+{
+    return `hello ${string}!`
 }
