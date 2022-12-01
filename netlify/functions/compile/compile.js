@@ -1,9 +1,8 @@
-const corehello = require('../../../billow/core');
+import { compile } from './core'
 
-exports.handler = async function (event, context) {
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ message: corehello }),
-    };
+export var handler = async function (event, context) {
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ code: compile(JSON.parse(event.body)) }),
   };
-  
+};

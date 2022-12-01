@@ -1,0 +1,18 @@
+<body></body>
+
+<script src="https://pixijs.download/release/pixi.js"></script>
+<script>
+    var app = new PIXI.Application({ width: window.innerWidth, height: window.innerHeight, background: '#1099bb' });
+    document.body.appendChild(app.view);
+    var sprite = PIXI.Sprite.from("./test.svg");
+    app.stage.addChild(sprite);
+    console.log(sprite.angle);
+    sprite.x = 0;
+    sprite.y = 0;
+    sprite.angle = 120;
+    let offset_x = Math.sin(sprite.angle * Math.PI / 180) * 10;
+    let offset_y = Math.cos(sprite.angle * Math.PI / 180) * 10;
+    console.log(offset_x, offset_y);
+    sprite.x += offset_x;
+    sprite.y += offset_y;
+</script>    
