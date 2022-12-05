@@ -22,3 +22,4 @@ const array = new Uint8Array([
 console.log(array.buffer);
 console.log(array.toString());
 WebAssembly.instantiate(array.buffer).then(result => console.log(result.instance.exports.fib(45)))
+

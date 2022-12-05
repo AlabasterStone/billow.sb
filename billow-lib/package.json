@@ -1,13 +1,11 @@
 {
-  "name": "billow.sb",
+  "name": "billow-lib",
   "version": "1.0.0",
-  "description": "A WebAssembly backend compiler for scratch 3.0 project.",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
+  "description": "billow.sb library helper",
+  "main": "scratch.js",
   "scripts": {
-    "test": "npx netlify dev"
+    "build": "npx browserify scratch.js > scratch.browser.js",
+    "test": "serve"
   },
   "repository": {
     "type": "git",
@@ -15,7 +13,7 @@
   },
   "keywords": [
     "scratch",
-    "compiler",
+    "comiler",
     "webassembly"
   ],
   "author": "AlabasterStone",
@@ -26,6 +24,7 @@
   "homepage": "https://github.com/AlabasterStone/billow.sb#readme",
   "dependencies": {
     "browserify": "^17.0.0",
-    "netlify-cli": "^12.2.8"
-  }
+    "pixi.js": "^7.0.4"
+  },
+  "type": "commonjs"
 }

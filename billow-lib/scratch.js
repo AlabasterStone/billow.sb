@@ -73,4 +73,3 @@ function motion_turnright(sprite, degree) {
     sprite.angle += scratchAngleToCanvas(degree);
     return sprite;
 }
-PIXI.utils.sayHello
