@@ -64,6 +64,13 @@ function motion_movesteps(sprite, steps) {
 }
 
 /**
- * motion_turnright
- * 
+ * @function __motion_turnright__
+ * @param {PIXI.Sprite} sprite
+ * @param {Number} degree
+ * @return {PIXI.Sprite}
  */
+function motion_turnright(sprite, degree) {
+    sprite.angle += scratchAngleToCanvas(degree);
+    return sprite;
+}
+PIXI.utils.sayHello

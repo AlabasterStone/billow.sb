@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/AlabasterStone/billow.sb#readme",
   "dependencies": {
-    "netlify-cli": "^12.2.7"
+    "netlify-cli": "^12.2.7",
+    "walt-compiler": "^0.21.0"
   },
   "type": "module"
 }
