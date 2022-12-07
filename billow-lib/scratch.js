@@ -4,7 +4,7 @@ const PIXI = require("pixi.js")
 //SAE-json.md
 
 /**
- * 转换scratch到canvas坐标系
+ * @description 转换scratch到canvas坐标系
  * @param {Number} x 
  * @param {Number} y 
  * @returns {Object}
@@ -16,7 +16,7 @@ function scratchPosToCanvas(x, y) {
 }
 
 /**
- * 转换canvas到scratch坐标系
+ * @description 转换canvas到scratch坐标系
  * @param {Number} x 
  * @param {Number} y 
  * @returns {Object}
@@ -28,7 +28,7 @@ function canvasPosToScratch(x, y) {
 }
 
 /**
- * 转换scratch到canvas角度
+ * @description 转换scratch到canvas角度
  * @param {Number} angle
  * @returns {Number}
  */
@@ -37,7 +37,7 @@ function scratchAngleToCanvas(angle) {
 }
 
 /**
- * 转换canvas到scratch角度
+ * @description 转换canvas到scratch角度
  * @param {Number} angle
  * @returns {Number}
  */
@@ -46,7 +46,7 @@ function canvasAngleToScratch(angle) {
 }
 
 /**
- * motion_movesteps
+ * @function motion_movesteps
  * @param {PIXI.Sprite} sprite
  * @param {Number} steps
  * @returns {PIXI.Sprite}
@@ -64,12 +64,41 @@ function motion_movesteps(sprite, steps) {
 }
 
 /**
- * @function __motion_turnright__
+ * @function motion_turnright
  * @param {PIXI.Sprite} sprite
  * @param {Number} degree
- * @return {PIXI.Sprite}
+ * @returns {PIXI.Sprite}
  */
 function motion_turnright(sprite, degree) {
     sprite.angle += scratchAngleToCanvas(degree);
     return sprite;
 }
+
+/**
+ * @function motion_turnleft
+ * @param {PIXI.Sprite} sprite
+ * @param {Number} degree
+ * @returns {PIXI.Sprite}
+ */
+function motion_turnleft(sprite, degree) {
+    sprite.angle -= scratchAngleToCanvas(degree);
+    return sprite;
+}
+
+var homo = PIXI.Sprite.from("test.svg");
+function print(s) {
+    console.log(homo);
+}
+
+const { compile } = require("walt-compiler");
+const buffer = compile(`
+import { motion_print: PrintType } from 'env';
+
+type PrintType = (i32) => void;
+export function echo(): void {
+  motion_print(1919810);
+}`).buffer();
+WebAssembly.instantiate(buffer, { env: { motion_print: print } }).then(result => result.instance.exports.echo());
+const create_sprite = (path) => {var new_sprite = PIXI.Sprite.from(path);};
+const move_sprite = (x, y) => new_sprite.position.set(x, y);
+

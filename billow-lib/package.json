@@ -24,7 +24,8 @@
   "homepage": "https://github.com/AlabasterStone/billow.sb#readme",
   "dependencies": {
     "browserify": "^17.0.0",
-    "pixi.js": "^7.0.4"
+    "pixi.js": "^7.0.4",
+    "walt-compiler": "^0.21.0"
   },
   "type": "commonjs"
 }
